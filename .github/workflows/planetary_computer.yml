@@ -23,7 +23,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install planetary-computer pystac-client rasterio folium
-
+          pip install planetary-computer pystac-client rasterio folium matplotlib
       - name: Run Python script
         run: python analysis.py  # 執行你的 Python 分析腳本
