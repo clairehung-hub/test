@@ -22,6 +22,7 @@ if items:
     # ✅ 確保在 `with` 內部讀取數據，防止 "Dataset is closed" 錯誤
     with rasterio.open(signed_asset) as dataset:
         image_array = dataset.read(1)  # 讀取影像數據
+        print(dataset)
         show(dataset)  # 顯示影像
         image_array.tofile("output_image.tif")  # ✅ 保存影像到本地
         print("✅ 影像已成功儲存到 output_image.tif")
