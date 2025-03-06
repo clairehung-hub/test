@@ -28,7 +28,7 @@ jobs:
         run: python analysis.py
 
       - name: Upload result image
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: sentinel-image  # ✅ 正確縮排
           path: output_image.tif  # ✅ 正確縮排
