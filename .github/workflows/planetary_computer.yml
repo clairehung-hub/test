@@ -1,0 +1,29 @@
+name: Run Planetary Computer Analysis
+
+on:
+  push:
+    branches:
+      - main  # 當 main 分支有新提交時運行
+  schedule:
+    - cron: '0 0 * * 1'  # 每週一 00:00 UTC 自動運行
+  workflow_dispatch:  # 允許手動觸發
+
+jobs:
+  run-notebook:
+    runs-on: ubuntu-latest  # 設置運行環境
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3  # 取得倉庫代碼
+
+      - name: Setup Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.9'  # 設定 Python 版本
+
+      - name: Install dependencies
+        run: |
+          pip install planetary-computer pystac-client rasterio folium
+
+      - name: Run Python script
+        run: python analysis.py  # 執行你的 Python 分析腳本
