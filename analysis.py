@@ -17,7 +17,7 @@ search = catalog.search(
 items = list(search.items())
 if items:
     item = items[0]
-    signed_asset = planetary_computer.sign(item.assets["B04"]).href  # 取得紅光波段影像
+    signed_asset = planetary_computer.sign(item.assets["B08"]).href  # 取得紅光波段影像
 
     # ✅ 確保在 `with` 內部讀取數據，防止 "Dataset is closed" 錯誤
     with rasterio.open(signed_asset) as dataset:
