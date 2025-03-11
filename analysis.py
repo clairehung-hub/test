@@ -13,11 +13,11 @@ search = catalog.search(
     collections=["sentinel-2-l2a"],
     bbox=[120.0, 21.5, 122.0, 25.5],  # ✅ 設定地理範圍 (台灣)
     datetime="2023-01-01/2023-12-31",  # ✅ 時間範圍
-    query={"eo:cloud_cover": {"lt": 10}}  # ✅ 雲量低於 10%
+    query={"eo:cloud_cover": {"lt": 50}}  # ✅ 雲量低於 10%
 )
 
-# 取得符合條件的影像（最多 4 張）
-items = list(search.items())[:4]
+# 取得符合條件的影像（最多 2 張）
+items = list(search.items())[:2]
 if not items:
     print("❌ 未找到符合條件的 Sentinel-2 影像")
     exit(1)
