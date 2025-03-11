@@ -9,8 +9,8 @@ catalog = pystac_client.Client.open("https://planetarycomputer.microsoft.com/api
 # 搜索 Sentinel-2 遙感影像
 search = catalog.search(
     collections=["sentinel-2-l2a"],
-    bbox=[-122.5, 37.5, -122.0, 38.0],  # 設定地理範圍 (舊金山)
-    datetime="2023-01-01/2023-12-31",
+    bbox=[121.673, 24.91571, 121.73, 24.23321],  # 設定地理範圍 (taiwan)
+    datetime="2025-03-01/2025-03-10",
 )
 
 # 取得符合條件的影像
